@@ -4,7 +4,9 @@
 HOME_FILES=".vimrc .gitconfig .tmux.conf"
 
 if [ "$1" == "--clean" ]; then
-    rm $HOME/{$HOME_FILES}
+    for f in $HOME_FILES; do
+        rm $HOME/$f
+    done
     rm -f .ssh/authorized_keys
     rm -rf .vim
 fi
