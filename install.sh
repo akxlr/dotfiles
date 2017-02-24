@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 for f in .vimrc .gitconfig .tmux.conf; do
     cp $f $HOME/$f
 done
