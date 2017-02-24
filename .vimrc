@@ -9,9 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-" Colour scheme
-Plugin 'altercation/vim-colors-solarized'
-
 " Snipmate and dependencies
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -55,12 +52,7 @@ call vundle#end()
 filetype plugin indent on
 " ---- END VUNDLE STUFF ----
 
-" My vimrc functions - easier to write python than vimscript
-pyfile ~/.vim/py_functions.py
-
 set term=xterm-256color
-
-set guifont=Inconsolata\ LGC\ for\ Powerline:h12
 
 " Basic set up as per: nvie.com/posts/how-i-boosted-my-vim/
 
@@ -69,8 +61,8 @@ let mapleader=","
 
 " Quickly edit/reload vimrc, + sets focus to the last line of the file
 " (removed for now as it was annoying)
-nnoremap <leader>ev :tabe ~/.vim/vimrc<CR>
-nnoremap <leader>sv :so ~/.vim/vimrc<CR>
+nnoremap <leader>ev :tabe ~/.vimrc<CR>
+nnoremap <leader>sv :so ~/.vimrc<CR>
 nnoremap <leader>et :tabe ~/.tmux.conf<CR>
 
 set tabstop=4                            " a tab is four spaces
@@ -113,14 +105,6 @@ let g:indentLine_char = '|'            " Character to use for indentLine plugin,
 let g:indentLine_faster = 1            " Otherwise indentLine plugin is unusably slow
 let g:indentLine_color_term = 0        " Fix colour for terminal vim
 let g:indentLine_color_gui = '#223344' " Fix colour for macvim
-
-" Colour scheme
-" 2014-11-24: vim-css-color plugin doesn't work in terminal unless this is 256, but seems to work in mvim
-" anyway - so I've left it as 16 but can probably be changed to 256 if
-" needed (might screw up solarized exact colours though)
-set t_Co=16
-set background=dark
-colorscheme solarized
 
 syntax on " Syntax highlighting
 
