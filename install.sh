@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
-for f in .vimrc .gitconfig .tmux.conf; do
+# Files to copy to $HOME
+HOME_FILES=".vimrc .gitconfig .tmux.conf"
+
+if [ "$1" == "--clean" ]; then
+    rm $HOME_FILES
+    rm -f .ssh/authorized_keys
+    rm -rf .vim
+fi
+
+for f in $HOME_FILES; do
     cp $f $HOME/$f
 done
 
